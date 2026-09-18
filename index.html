@@ -2,19 +2,24 @@
 <!--
   ============================================================
   BEFORE YOU PUBLISH — replace the placeholders marked [[ ]]:
-    [[YOUR NAME]]      – appears in <title> and the header
+    [[YOUR NAME]]      – appears in <title>, header and footer
     [[EMAIL]]          – mailto link
     [[PHONE]]          – tel link (or delete that line)
     [[LINKEDIN_URL]]   – full https URL
     [[LOCATION]]       – e.g. Hyderabad, India
   Search for "[[" to find them all.
+
+  NOTE: a few spots are marked <!-- ADD A NUMBER --> . Anywhere you can
+  put a real figure (users supported, ticket volume, downtime window,
+  records migrated), do — it's the fastest way to outclass every other
+  ERP portfolio a recruiter opens. Don't invent one.
   ============================================================
 -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>[[YOUR NAME]] — Dynamics 365 Business Central Consultant</title>
+<title>[Vinay Sai Kothuri] — Dynamics 365 Business Central Consultant</title>
 <meta name="description" content="ERP consultant with 4.8 years in Microsoft Dynamics 365 Business Central and NAV: functional and techno-functional support, version upgrades, and post go-live support.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -124,13 +129,18 @@
   main{padding:clamp(2.5rem,6vw,4.5rem) 0 0;min-width:0;}
 
   .lede{
-    font-size:clamp(1.15rem,0.7vw + 1rem,1.4rem);
-    line-height:1.45;
-    font-weight:500;
-    max-width:32ch;
-    margin:0 0 2.25rem;
-    letter-spacing:-0.012em;
+    font-size:clamp(1.15rem,0.7vw + 1rem,1.45rem);
+    line-height:1.4;
+    font-weight:600;
+    max-width:24ch;
+    margin:0 0 1.1rem;
+    letter-spacing:-0.015em;
     animation:rise .5s ease-out both;
+  }
+  .sub{
+    max-width:42ch;
+    color:var(--ink-soft);
+    margin:0 0 2.5rem;
   }
   @keyframes rise{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
 
@@ -196,10 +206,14 @@
     font-size:.88rem;
     margin:0 0 .8rem;
   }
-  .record ul{margin:0;padding-left:1.05rem;max-width:var(--measure);}
-  .record li{margin:0 0 .45rem;}
-  .record li:last-child{margin-bottom:0;}
-  .record li::marker{color:var(--rule);}
+  .record p{margin:0 0 .8rem;}
+  .record p:last-child{margin-bottom:0;}
+  .took{
+    border-top:1px solid var(--rule);
+    padding-top:.7rem;
+    font-size:.94rem;
+  }
+  .took b{font-weight:600;}
 
   .employer{
     display:flex;
@@ -213,6 +227,19 @@
   }
   .employer h3{margin:0;font-size:1.02rem;font-weight:700;}
   .employer span{color:var(--ink-soft);font-size:.9rem;}
+
+  /* ---------- how I work ---------- */
+  .practice{margin:0;}
+  .practice > div{
+    display:grid;
+    grid-template-columns:minmax(10rem,13rem) minmax(0,1fr);
+    gap:.35rem 1.5rem;
+    padding:.85rem 0;
+    border-bottom:1px solid var(--rule);
+  }
+  .practice > div:first-child{border-top:1px solid var(--rule);}
+  .practice dt{font-weight:600;font-size:.96rem;}
+  .practice dd{margin:0;color:var(--ink-soft);}
 
   /* ---------- modules / skills ---------- */
   .modules{margin:0;}
@@ -253,6 +280,15 @@
     margin:0 0 .85rem;
   }
 
+  .closing{
+    background:var(--field);
+    border:1px solid var(--rule);
+    border-top:3px solid var(--pine);
+    padding:1.35rem 1.4rem;
+  }
+  .closing p{margin:0 0 .8rem;}
+  .closing p:last-child{margin:0;font-weight:600;}
+
   footer{
     grid-column:1/-1;
     border-top:1px solid var(--rule);
@@ -271,10 +307,11 @@
     .rail{position:static;padding-bottom:1.5rem;}
     .nav{display:none;}
     main{padding-top:0;}
-    .lede{max-width:none;}
+    .lede,.sub{max-width:none;}
+    .practice > div,.modules > div{grid-template-columns:1fr;}
   }
 
-  /* ---------- print: doubles as a clean resume ---------- */
+  /* ---------- print ---------- */
   @media print{
     :root{--paper:#fff;}
     body{font-size:10.5pt;}
@@ -304,18 +341,20 @@
 
     <nav class="nav" aria-label="Sections">
       <ol>
-        <li><a href="#profile">Profile</a></li>
+        <li><a href="#profile">What I do</a></li>
         <li><a href="#work">Client engagements</a></li>
+        <li><a href="#practice">How I work</a></li>
         <li><a href="#capability">Capability</a></li>
         <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#recognition">Recognition</a></li>
+        <li><a href="#contact">Get in touch</a></li>
       </ol>
     </nav>
   </header>
 
   <main id="main">
 
-    <p class="lede">I keep Business Central running for the people who use it every day — and upgrade it without stopping their month-end.</p>
+    <p class="lede">I keep Business Central running for the people who depend on it every day.</p>
+    <p class="sub">Four and a half years of Dynamics 365 BC and NAV across chemicals, manufacturing, pharmaceuticals and sustainability reporting — support that gets to the cause, upgrades that finish before month-end, and users who stop needing to raise the ticket.</p>
 
     <dl class="ledger">
       <div><dt>Experience</dt><dd>4.8 years</dd></div>
@@ -326,8 +365,9 @@
     </dl>
 
     <section id="profile">
-      <h2>Profile</h2>
-      <p>ERP consultant with 4.8 years across Microsoft Dynamics 365 Business Central and Navision, working with reporting, manufacturing, pharmaceutical and chemical businesses. My work spans functional and techno-functional support, version upgrades, troubleshooting, customisation and process automation — plus the user training and post go-live support that decides whether any of it actually sticks.</p>
+      <h2>What I do</h2>
+      <p>Most ERP problems arrive dressed as a system error and turn out to be a process one. A posting group set up for a business that has since changed shape. A workflow nobody told the new joiner about. A report that was right in 2019. My job is to tell the difference quickly, fix the right layer, and write it down so the next person doesn't start from zero.</p>
+      <p>I work across the functional side of Business Central and NAV — finance, sales and purchase, inventory, warehouse, fixed assets — and increasingly the technical side too, because the handoff between the two is where most support time gets lost. I'd rather read the code and know than raise a ticket and wait.</p>
     </section>
 
     <section id="work">
@@ -344,13 +384,9 @@
           <span class="system">Business Central v27.5 → latest</span>
         </div>
         <p class="industry">Chemicals &amp; coatings</p>
-        <ul>
-          <li>Provided functional support for Business Central, keeping daily operations moving and resolving user issues end to end.</li>
-          <li>Led the version upgrade from v27.5 to the latest release with minimal downtime and full compatibility with existing processes.</li>
-          <li>Initiated technical support activities covering troubleshooting, customisation and performance optimisation.</li>
-          <li>Worked with business stakeholders on configuration updates and process improvements that raised system efficiency.</li>
-          <li>Delivered L1 and L2 functional support while extending into technical support, bridging both sides.</li>
-        </ul>
+        <p>A global coatings business where the ERP is never allowed to be the reason a plant stops. I run the day-to-day functional support and owned the version upgrade — planned around the finance calendar so no close was ever at risk, and validated against existing customisations before anything moved.</p>
+        <!-- ADD A NUMBER: how many users? how long was the upgrade cutover window? -->
+        <p class="took"><b>The part I'd want to be judged on:</b> I stopped treating recurring tickets as individual tickets. Tracing the repeat offenders back into configuration and code meant fixing causes instead of symptoms, and it's what pulled me from functional support into technical work.</p>
       </article>
 
       <article class="record">
@@ -359,28 +395,20 @@
           <span class="system">Business Central</span>
         </div>
         <p class="industry">Sustainability reporting</p>
-        <ul>
-          <li>Joined sprint meetings with end users to gather requirements and configure posting groups, workflows and process automation.</li>
-          <li>Ran UAT sessions, wrote structured test case scenarios and produced user manuals so new features were adopted without hand-holding.</li>
-          <li>Delivered L1 and L2 functional support, resolving tickets in time to keep daily operations undisrupted.</li>
-          <li>Partnered with business users on configuration updates and process optimisations that improved operational efficiency.</li>
-        </ul>
+        <p>Here I was in the room while requirements were still being argued about, not handed them afterwards. Sprint by sprint I turned what users described into posting groups, workflows and automated steps — then ran the UAT myself, wrote the test scenarios, and produced manuals in the language the users actually use.</p>
+        <p class="took"><b>The part I'd want to be judged on:</b> Adoption. A configuration that's technically correct and quietly ignored has failed. Writing the manual is not paperwork after the build — it's the last 10% of the build.</p>
       </article>
 
       <article class="record">
         <div class="record-head">
           <h4 class="client">International Flavors &amp; Fragrances (IFF)</h4>
-          <span class="system">NAV 5.0</span>
+          <span class="system">NAV 5.0 → SAP</span>
         </div>
         <p class="industry">Manufacturing</p>
-        <ul>
-          <li>Provided techno-functional support across Finance, Sales, Purchase, Inventory and Fixed Assets.</li>
-          <li>Designed, customised and supported NAV reports, handling modifications and enhancements as the business changed.</li>
-          <li>Managed user accounts, role-based permissions and system configurations for secure, efficient operations.</li>
-          <li>Supported data migration and validation from NAV to SAP, including data correction in live systems.</li>
-          <li>Trained end users and built manuals and knowledge base articles for new features.</li>
-          <li>Handled L1 to L3 support, including root cause analysis and month-end and year-end financial closing.</li>
-        </ul>
+        <p>An old NAV instance still carrying real manufacturing load, which is its own discipline — you can't Google your way out of 5.0. I customised and maintained the reports, managed permissions and configuration, and handled support from first response through root cause analysis, including month-end and year-end close.</p>
+        <p>Then we moved it to SAP. I worked the migration and validation, including correcting data in a live system while people were still transacting on it.</p>
+        <!-- ADD A NUMBER: record volume migrated, or modules in scope -->
+        <p class="took"><b>The part I'd want to be judged on:</b> L1 to L3 on the same desk. Owning a problem from the user's phrasing all the way down to the cause, without a handoff losing the context.</p>
       </article>
 
       <article class="record">
@@ -389,13 +417,31 @@
           <span class="system">NAV 2016 + Coupa</span>
         </div>
         <p class="industry">Pharmaceuticals · Germany-based</p>
-        <ul>
-          <li>Maintained the Coupa–NAV integration that carries procurement through to financial posting.</li>
-          <li>Delivered functional support across Finance, Sales and Purchase for accurate day-to-day transaction handling.</li>
-          <li>Worked with business users to resolve functional issues and optimise configurations on critical pharmaceutical workflows.</li>
-          <li>Supported the system post-implementation through troubleshooting, documentation and user guidance.</li>
-        </ul>
+        <p>A regulated business where procurement and finance have to agree, and the integration between Coupa and NAV is where they either do or don't. I supported that seam, alongside functional support across finance, sales and purchase, and stayed on post-implementation for the troubleshooting and guidance that follows a go-live.</p>
+        <p class="took"><b>The part I'd want to be judged on:</b> Working across a time zone and a language boundary with a client who needed answers to be right the first time.</p>
       </article>
+    </section>
+
+    <section id="practice">
+      <h2>How I work</h2>
+      <dl class="practice">
+        <div>
+          <dt>Cause over symptom</dt>
+          <dd>A ticket closed is not a problem solved. If the same one comes back next month, it was never fixed.</dd>
+        </div>
+        <div>
+          <dt>Upgrades around the close</dt>
+          <dd>Finance has dates it cannot miss. The upgrade plan fits their calendar, not the other way round.</dd>
+        </div>
+        <div>
+          <dt>Written down or it didn't happen</dt>
+          <dd>Test cases, configuration notes, user manuals. The client shouldn't depend on me remembering.</dd>
+        </div>
+        <div>
+          <dt>Ask the user, not the system</dt>
+          <dd>Requirements come from watching how people actually work, not from what the screen allows.</dd>
+        </div>
+      </dl>
     </section>
 
     <section id="capability">
@@ -421,35 +467,39 @@
           <dt>Tools</dt>
           <dd>Power BI, Power Automate, Excel, Word, PowerPoint</dd>
         </div>
-        <div>
-          <dt>Working style</dt>
-          <dd>Problem solving, analytical thinking, clear written and verbal communication, customer engagement, team collaboration</dd>
-        </div>
       </dl>
     </section>
 
     <section id="certifications">
-      <h2>Certifications</h2>
+      <h2>Certifications &amp; recognition</h2>
       <ul class="certs">
         <li><span class="code">MB-800</span> — Dynamics 365 Business Central Functional Consultant Associate</li>
         <li><span class="code">AZ-900</span> — Azure Fundamentals</li>
         <li><span class="code">PL-500</span> — Power Automate RPA Developer Associate <span class="expired">(expired)</span></li>
       </ul>
+      </section>
+      <section id="recognition">
+      <h2>Recognition</h2>
+      <ul class="wins" style="margin-top:1.5rem;">
+        <li>Star of the Month, April 2026.</li>
+        <li>Appreciation Certificate from the client and from TCS.</li>
+        <li>Named by clients and the project manager for delivery on named projects.</li>
+      </ul>
     </section>
 
-    <section id="recognition">
-      <h2>Recognition</h2>
-      <ul class="wins">
-        <li>Star of the Month, April 2026, for sustained high performance.</li>
-        <li>Appreciation Certificate from the client and from TCS for exceptional contribution.</li>
-        <li>Formal recognition from clients and the project manager for delivering successful project outcomes.</li>
-      </ul>
+    <section id="contact">
+      <h2>Get in touch</h2>
+      <div class="closing">
+        <p>I'm looking for a consulting or functional lead role where Business Central is the product, not a side system — ideally somewhere I can keep widening the technical side of what I do.</p>
+        <p>Happy to talk through any of the work above in more detail, including the parts that went wrong.</p>
+        <p><a href="mailto:[[EMAIL]]">[[EMAIL]]</a></p>
+      </div>
     </section>
   </main>
 
   <footer>
     <span>[[YOUR NAME]] — Dynamics 365 Business Central consultant</span>
-    <span><a href="mailto:[[EMAIL]]">Get in touch</a></span>
+    <span><a href="[[LINKEDIN_URL]]">LinkedIn</a></span>
   </footer>
 </div>
 
