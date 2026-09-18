@@ -1,97 +1,481 @@
 <!DOCTYPE html>
+<!--
+  ============================================================
+  BEFORE YOU PUBLISH — replace the placeholders marked [[ ]]:
+    [[YOUR NAME]]      – appears in <title> and the header
+    [[EMAIL]]          – mailto link
+    [[PHONE]]          – tel link (or delete that line)
+    [[LINKEDIN_URL]]   – full https URL
+    [[LOCATION]]       – e.g. Hyderabad, India
+  Search for "[[" to find them all.
+  ============================================================
+-->
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Vinay – ERP Consultant Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[[YOUR NAME]] — Dynamics 365 Business Central Consultant</title>
+<meta name="description" content="ERP consultant with 4.8 years in Microsoft Dynamics 365 Business Central and NAV: functional and techno-functional support, version upgrades, and post go-live support.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EEF1F4;
+    --field:#FFFFFF;
+    --ink:#16212B;
+    --ink-soft:#4A5866;
+    --rule:#C9D3DC;
+    --pine:#1F5F5B;
+    --brass:#8A6A1F;
+    --measure:68ch;
+    --pad:clamp(1.25rem, 4vw, 3rem);
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation:none !important;transition:none !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Archivo","Helvetica Neue",Arial,sans-serif;
+    font-size:clamp(15px,0.55vw + 13.5px,17px);
+    line-height:1.55;
+    font-variant-numeric:tabular-nums;
+  }
+
+  a{color:var(--pine);text-underline-offset:3px;text-decoration-thickness:1px;}
+  a:hover{color:var(--ink);}
+  :focus-visible{outline:2px solid var(--pine);outline-offset:3px;border-radius:2px;}
+
+  .skip{position:absolute;left:-9999px;}
+  .skip:focus{left:var(--pad);top:0.75rem;background:var(--field);padding:.6rem 1rem;z-index:20;}
+
+  /* ---------- shell ---------- */
+  .shell{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 var(--pad) 5rem;
+    display:grid;
+    grid-template-columns:minmax(230px,17rem) minmax(0,1fr);
+    gap:clamp(2rem,5vw,4.5rem);
+    align-items:start;
+  }
+
+  /* ---------- left rail ---------- */
+  .rail{
+    position:sticky;
+    top:0;
+    padding:clamp(2.5rem,6vw,4.5rem) 0 2rem;
+  }
+  .name{
+    font-size:clamp(1.9rem,2.4vw + 1.1rem,2.7rem);
+    font-weight:800;
+    letter-spacing:-0.025em;
+    line-height:1.02;
+    margin:0 0 .6rem;
+  }
+  .role{
+    font-size:1rem;
+    font-weight:600;
+    color:var(--pine);
+    margin:0 0 .35rem;
+    line-height:1.35;
+  }
+  .place{
+    color:var(--ink-soft);
+    font-size:.9rem;
+    margin:0 0 1.5rem;
+  }
+
+  .contact{list-style:none;margin:0 0 2rem;padding:0;font-size:.92rem;}
+  .contact li{
+    border-top:1px solid var(--rule);
+    padding:.45rem 0;
+  }
+  .contact li:last-child{border-bottom:1px solid var(--rule);}
+  .contact a{text-decoration:none;font-weight:500;display:block;}
+  .contact a:hover{text-decoration:underline;}
+
+  .nav{font-size:.92rem;}
+  .nav ol{list-style:none;margin:0;padding:0;}
+  .nav li{margin:0 0 .3rem;}
+  .nav a{
+    display:block;
+    text-decoration:none;
+    color:var(--ink-soft);
+    padding:.15rem 0 .15rem .9rem;
+    border-left:2px solid transparent;
+    font-weight:500;
+  }
+  .nav a:hover{color:var(--ink);}
+  .nav a[aria-current="true"]{
+    color:var(--ink);
+    border-left-color:var(--pine);
+    font-weight:600;
+  }
+
+  /* ---------- main ---------- */
+  main{padding:clamp(2.5rem,6vw,4.5rem) 0 0;min-width:0;}
+
+  .lede{
+    font-size:clamp(1.15rem,0.7vw + 1rem,1.4rem);
+    line-height:1.45;
+    font-weight:500;
+    max-width:32ch;
+    margin:0 0 2.25rem;
+    letter-spacing:-0.012em;
+    animation:rise .5s ease-out both;
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+
+  /* balance-sheet strip */
+  .ledger{
+    margin:0 0 3.5rem;
+    max-width:30rem;
+    border-top:2px solid var(--ink);
+  }
+  .ledger div{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:1rem;
+    border-bottom:1px solid var(--rule);
+    padding:.5rem 0;
+  }
+  .ledger dt{color:var(--ink-soft);font-size:.86rem;margin:0;}
+  .ledger dd{
+    margin:0;
+    font-weight:700;
+    font-size:1.02rem;
+    letter-spacing:-0.01em;
+    text-align:right;
+  }
+
+  section{padding:0 0 3.25rem;scroll-margin-top:1.5rem;}
+  h2{
+    font-size:1.08rem;
+    font-weight:700;
+    letter-spacing:-0.01em;
+    margin:0 0 1.25rem;
+    padding-bottom:.5rem;
+    border-bottom:2px solid var(--ink);
+  }
+  p{max-width:var(--measure);}
+
+  /* ---------- engagement records ---------- */
+  .record{
+    background:var(--field);
+    border:1px solid var(--rule);
+    border-left:3px solid var(--pine);
+    padding:1.15rem 1.25rem 1.25rem;
+    margin:0 0 1rem;
+  }
+  .record-head{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:.35rem 1rem;
+    margin-bottom:.15rem;
+  }
+  .client{font-size:1.12rem;font-weight:700;letter-spacing:-0.015em;margin:0;}
+  .system{
+    font-weight:600;
+    font-size:.85rem;
+    color:var(--pine);
+    white-space:nowrap;
+  }
+  .industry{
+    color:var(--ink-soft);
+    font-size:.88rem;
+    margin:0 0 .8rem;
+  }
+  .record ul{margin:0;padding-left:1.05rem;max-width:var(--measure);}
+  .record li{margin:0 0 .45rem;}
+  .record li:last-child{margin-bottom:0;}
+  .record li::marker{color:var(--rule);}
+
+  .employer{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:.25rem 1rem;
+    padding:0 0 .9rem;
+    margin:0 0 1.4rem;
+    border-bottom:1px solid var(--rule);
+  }
+  .employer h3{margin:0;font-size:1.02rem;font-weight:700;}
+  .employer span{color:var(--ink-soft);font-size:.9rem;}
+
+  /* ---------- modules / skills ---------- */
+  .modules{margin:0;}
+  .modules > div{
+    display:grid;
+    grid-template-columns:minmax(9rem,11rem) minmax(0,1fr);
+    gap:.35rem 1.5rem;
+    padding:.7rem 0;
+    border-bottom:1px solid var(--rule);
+  }
+  .modules > div:first-child{border-top:1px solid var(--rule);}
+  .modules dt{font-weight:600;font-size:.94rem;}
+  .modules dd{margin:0;color:var(--ink-soft);}
+
+  /* ---------- certifications ---------- */
+  .certs{list-style:none;margin:0;padding:0;}
+  .certs li{
+    padding:.6rem 0 .6rem 1.4rem;
+    border-bottom:1px solid var(--rule);
+    position:relative;
+    max-width:var(--measure);
+  }
+  .certs li:first-child{border-top:1px solid var(--rule);}
+  .certs li::before{
+    content:"";
+    position:absolute;
+    left:0;top:1.05em;
+    width:.55rem;height:.55rem;
+    background:var(--brass);
+  }
+  .code{font-weight:700;}
+  .expired{color:var(--ink-soft);font-weight:500;font-size:.88rem;}
+
+  .wins{list-style:none;margin:0;padding:0;max-width:var(--measure);}
+  .wins li{
+    border-left:2px solid var(--brass);
+    padding:.1rem 0 .1rem .9rem;
+    margin:0 0 .85rem;
+  }
+
+  footer{
+    grid-column:1/-1;
+    border-top:1px solid var(--rule);
+    padding-top:1.1rem;
+    color:var(--ink-soft);
+    font-size:.86rem;
+    display:flex;
+    flex-wrap:wrap;
+    gap:.4rem 1.25rem;
+    justify-content:space-between;
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:860px){
+    .shell{grid-template-columns:1fr;gap:0;}
+    .rail{position:static;padding-bottom:1.5rem;}
+    .nav{display:none;}
+    main{padding-top:0;}
+    .lede{max-width:none;}
+  }
+
+  /* ---------- print: doubles as a clean resume ---------- */
+  @media print{
+    :root{--paper:#fff;}
+    body{font-size:10.5pt;}
+    .shell{display:block;max-width:none;padding:0;}
+    .nav,.skip{display:none;}
+    .record{break-inside:avoid;border-left-width:2px;}
+    section{padding-bottom:1rem;}
+    a{color:inherit;text-decoration:none;}
+  }
+</style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Vinay</h1>
-      <p>ERP Consultant | Business Central & ServiceNow Specialist</p>
-    </div>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="shell">
+
+  <header class="rail">
+    <h1 class="name">[[YOUR NAME]]</h1>
+    <p class="role">Microsoft Dynamics 365 Business Central / NAV Consultant</p>
+    <p class="place">[[LOCATION]] · Open to ERP consulting roles</p>
+
+    <ul class="contact">
+      <li><a href="mailto:[[EMAIL]]">[[EMAIL]]</a></li>
+      <li><a href="tel:[[PHONE]]">[[PHONE]]</a></li>
+      <li><a href="[[LINKEDIN_URL]]">LinkedIn</a></li>
+    </ul>
+
+    <nav class="nav" aria-label="Sections">
+      <ol>
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#work">Client engagements</a></li>
+        <li><a href="#capability">Capability</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#recognition">Recognition</a></li>
+      </ol>
+    </nav>
   </header>
 
-  <nav>
-    <ul>
-      <li><a href="#summary">Summary</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#achievements">Achievements</a></li>
-      <li><a href="#certifications">Certifications</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <main id="main">
 
-  <section id="summary" class="container">
-    <h2>Professional Summary</h2>
-    <p>Dynamic and results-driven ERP Consultant with 4.8 years of experience in Microsoft Dynamics 365 Business Central/Navision across industries including reporting, manufacturing, pharmaceuticals, and chemicals. Skilled in functional and techno-functional support, version upgrades, troubleshooting, customization, and process automation. Recognized for enabling efficiency through ERP transformations, user training, and seamless post-go-live support.</p>
-  </section>
+    <p class="lede">I keep Business Central running for the people who use it every day — and upgrade it without stopping their month-end.</p>
 
-  <section id="skills" class="container">
-    <h2>Key Skills</h2>
-    <ul>
-      <li>Microsoft Dynamics 365 Business Central & NAV: Functional Support, Techno-Functional Support, Customization (C/AL), Troubleshooting, Version Upgrades & Migration</li>
-      <li>Functional Expertise: Finance (GL, AP/AR, Bank Reconciliation), Sales & Purchase, Inventory, Warehouse, Fixed Assets, Post Go-Live Support</li>
-      <li>Documentation & Analysis: Test Case Documentation, SOW Preparation, Functional Specs, Process Flow Diagrams</li>
-      <li>Tools & Technologies: Power BI, Power Automate, Microsoft Office Suite</li>
-      <li>Soft Skills: Problem-Solving, Communication, Analytical Thinking, Team Collaboration, Customer Engagement</li>
-    </ul>
-  </section>
+    <dl class="ledger">
+      <div><dt>Experience</dt><dd>4.8 years</dd></div>
+      <div><dt>Platform</dt><dd>D365 Business Central &amp; NAV</dd></div>
+      <div><dt>Support levels</dt><dd>L1 · L2 · L3</dd></div>
+      <div><dt>Client engagements</dt><dd>4</dd></div>
+      <div><dt>Microsoft certifications</dt><dd>3</dd></div>
+    </dl>
 
-  <section id="projects" class="container">
-    <h2>Project Experience</h2>
-    <h3>Tata Consultancy Services (Oct 2021 – Present)</h3>
+    <section id="profile">
+      <h2>Profile</h2>
+      <p>ERP consultant with 4.8 years across Microsoft Dynamics 365 Business Central and Navision, working with reporting, manufacturing, pharmaceutical and chemical businesses. My work spans functional and techno-functional support, version upgrades, troubleshooting, customisation and process automation — plus the user training and post go-live support that decides whether any of it actually sticks.</p>
+    </section>
 
-    <div class="project">
-      <h4>Client 1 – AkzoNobel | Chemicals & Coatings</h4>
-      <p>Functional support for BC v27.5, technical troubleshooting, customization, performance optimization, and version upgrade projects ensuring minimal downtime.</p>
-    </div>
+    <section id="work">
+      <h2>Client engagements</h2>
 
-    <div class="project">
-      <h4>Client 2 – Global Reporting Initiative (GRI)</h4>
-      <p>Configured posting groups, workflows, automation; managed UAT, created manuals, delivered L1/L2 support, and optimized processes.</p>
-    </div>
+      <div class="employer">
+        <h3>Tata Consultancy Services — Functional Analyst, D365 BC/NAV</h3>
+        <span>October 2021 – Present</span>
+      </div>
 
-    <div class="project">
-      <h4>Client 3 – International Flavors & Fragrances (IFF)</h4>
-      <p>Techno-functional support across Finance, Sales, Purchase, Inventory, Fixed Assets; customized reports in NAV 5.0; managed migration NAV → SAP.</p>
-    </div>
+      <article class="record">
+        <div class="record-head">
+          <h4 class="client">AkzoNobel</h4>
+          <span class="system">Business Central v27.5 → latest</span>
+        </div>
+        <p class="industry">Chemicals &amp; coatings</p>
+        <ul>
+          <li>Provided functional support for Business Central, keeping daily operations moving and resolving user issues end to end.</li>
+          <li>Led the version upgrade from v27.5 to the latest release with minimal downtime and full compatibility with existing processes.</li>
+          <li>Initiated technical support activities covering troubleshooting, customisation and performance optimisation.</li>
+          <li>Worked with business stakeholders on configuration updates and process improvements that raised system efficiency.</li>
+          <li>Delivered L1 and L2 functional support while extending into technical support, bridging both sides.</li>
+        </ul>
+      </article>
 
-    <div class="project">
-      <h4>Client 4 – Ferring Pharmaceuticals</h4>
-      <p>Supported NAV 2016 integration with Coupa; delivered Finance, Sales, Purchase support; optimized configurations; provided post-implementation guidance.</p>
-    </div>
-  </section>
+      <article class="record">
+        <div class="record-head">
+          <h4 class="client">Global Reporting Initiative (GRI)</h4>
+          <span class="system">Business Central</span>
+        </div>
+        <p class="industry">Sustainability reporting</p>
+        <ul>
+          <li>Joined sprint meetings with end users to gather requirements and configure posting groups, workflows and process automation.</li>
+          <li>Ran UAT sessions, wrote structured test case scenarios and produced user manuals so new features were adopted without hand-holding.</li>
+          <li>Delivered L1 and L2 functional support, resolving tickets in time to keep daily operations undisrupted.</li>
+          <li>Partnered with business users on configuration updates and process optimisations that improved operational efficiency.</li>
+        </ul>
+      </article>
 
-  <section id="achievements" class="container">
-    <h2>Achievements</h2>
-    <ul>
-      <li>Star of the Month Award (Apr 2026)</li>
-      <li>Appreciation Certificate from client and organization</li>
-      <li>Formal recognition from clients and Project Manager for successful project outcomes</li>
-    </ul>
-  </section>
+      <article class="record">
+        <div class="record-head">
+          <h4 class="client">International Flavors &amp; Fragrances (IFF)</h4>
+          <span class="system">NAV 5.0</span>
+        </div>
+        <p class="industry">Manufacturing</p>
+        <ul>
+          <li>Provided techno-functional support across Finance, Sales, Purchase, Inventory and Fixed Assets.</li>
+          <li>Designed, customised and supported NAV reports, handling modifications and enhancements as the business changed.</li>
+          <li>Managed user accounts, role-based permissions and system configurations for secure, efficient operations.</li>
+          <li>Supported data migration and validation from NAV to SAP, including data correction in live systems.</li>
+          <li>Trained end users and built manuals and knowledge base articles for new features.</li>
+          <li>Handled L1 to L3 support, including root cause analysis and month-end and year-end financial closing.</li>
+        </ul>
+      </article>
 
-  <section id="certifications" class="container">
-    <h2>Certifications</h2>
-    <ul>
-      <li>Microsoft Certified: Dynamics 365 Business Central Functional Consultant Associate (MB-800)</li>
-      <li>Microsoft Certified: Azure Fundamentals (AZ-900)</li>
-      <li>Microsoft Certified: Power Automate RPA Developer Associate (PL-500) (Expired)</li>
-    </ul>
-  </section>
+      <article class="record">
+        <div class="record-head">
+          <h4 class="client">Ferring Pharmaceuticals</h4>
+          <span class="system">NAV 2016 + Coupa</span>
+        </div>
+        <p class="industry">Pharmaceuticals · Germany-based</p>
+        <ul>
+          <li>Maintained the Coupa–NAV integration that carries procurement through to financial posting.</li>
+          <li>Delivered functional support across Finance, Sales and Purchase for accurate day-to-day transaction handling.</li>
+          <li>Worked with business users to resolve functional issues and optimise configurations on critical pharmaceutical workflows.</li>
+          <li>Supported the system post-implementation through troubleshooting, documentation and user guidance.</li>
+        </ul>
+      </article>
+    </section>
 
-  <section id="contact" class="container">
-    <h2>Contact</h2>
-    <p>Email: your.email@example.com</p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/vinay">linkedin.com/in/vinay</a></p>
-    <p>GitHub: <a href="https://github.com/Kanna06-VS">github.com/Kanna06-VS</a></p>
-  </section>
+    <section id="capability">
+      <h2>Capability</h2>
+      <dl class="modules">
+        <div>
+          <dt>Finance</dt>
+          <dd>General ledger, accounts payable, accounts receivable, bank reconciliation, fixed assets, period-end close</dd>
+        </div>
+        <div>
+          <dt>Supply chain</dt>
+          <dd>Sales &amp; purchase, inventory, warehouse</dd>
+        </div>
+        <div>
+          <dt>Platform work</dt>
+          <dd>Version upgrades and migration, customisation (C/AL), troubleshooting, performance tuning, permissions and configuration</dd>
+        </div>
+        <div>
+          <dt>Documentation</dt>
+          <dd>Test cases, statements of work, functional specifications, process flow diagrams, configuration documents, user manuals</dd>
+        </div>
+        <div>
+          <dt>Tools</dt>
+          <dd>Power BI, Power Automate, Excel, Word, PowerPoint</dd>
+        </div>
+        <div>
+          <dt>Working style</dt>
+          <dd>Problem solving, analytical thinking, clear written and verbal communication, customer engagement, team collaboration</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <ul class="certs">
+        <li><span class="code">MB-800</span> — Dynamics 365 Business Central Functional Consultant Associate</li>
+        <li><span class="code">AZ-900</span> — Azure Fundamentals</li>
+        <li><span class="code">PL-500</span> — Power Automate RPA Developer Associate <span class="expired">(expired)</span></li>
+      </ul>
+    </section>
+
+    <section id="recognition">
+      <h2>Recognition</h2>
+      <ul class="wins">
+        <li>Star of the Month, April 2026, for sustained high performance.</li>
+        <li>Appreciation Certificate from the client and from TCS for exceptional contribution.</li>
+        <li>Formal recognition from clients and the project manager for delivering successful project outcomes.</li>
+      </ul>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2026 Vinay – Portfolio</p>
+    <span>[[YOUR NAME]] — Dynamics 365 Business Central consultant</span>
+    <span><a href="mailto:[[EMAIL]]">Get in touch</a></span>
   </footer>
+</div>
+
+<script>
+  // Marks the section you're reading in the left index.
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
+    if (!links.length || !('IntersectionObserver' in window)) return;
+
+    var map = {};
+    links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          links.forEach(function (a) { a.removeAttribute('aria-current'); });
+          map[entry.target.id].setAttribute('aria-current', 'true');
+        }
+      });
+    }, { rootMargin: '-10% 0px -70% 0px', threshold: 0 });
+
+    Object.keys(map).forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+  })();
+</script>
 </body>
 </html>
