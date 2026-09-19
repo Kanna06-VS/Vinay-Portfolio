@@ -246,17 +246,17 @@
     margin:0 0 2rem;
   }
   .module-card{
-    background:var(--field);
+    position:relative;
+    aspect-ratio:4/3;
+    background:var(--paper);
     border:1px solid var(--rule);
     overflow:hidden;
     text-align:left;
     cursor:default;
   }
   .module-card .photo{
-    width:100%;
-    aspect-ratio:4/3;
-    background:var(--paper) center/cover no-repeat;
-    border-bottom:1px solid var(--rule);
+    position:absolute;
+    inset:0;
   }
   .module-card .photo img{
     width:100%;
@@ -264,27 +264,64 @@
     object-fit:cover;
     display:block;
   }
-  .module-card .body{padding:.9rem 1rem 1rem;}
+  /* darkens toward the bottom so the revealed text stays readable over any photo */
+  .module-card::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, rgba(22,33,43,0) 35%, rgba(22,33,43,.82) 100%);
+    opacity:0;
+    transition:opacity .3s ease;
+  }
+  .module-card:hover::after,
+  .module-card:focus-within::after{
+    opacity:1;
+  }
+  .module-card .body{
+    position:absolute;
+    inset:0;
+    z-index:1;
+  }
   .module-card h3{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
     margin:0;
-    font-size:.98rem;
+    padding:.35rem .7rem;
+    font-size:.92rem;
     font-weight:700;
+    color:#fff;
+    white-space:nowrap;
+    background:rgba(22,33,43,.55);
+    border-radius:3px;
+    transition:top .3s ease, left .3s ease, transform .3s ease;
+  }
+  .module-card:hover h3,
+  .module-card:focus-within h3{
+    top:.7rem;
+    left:.7rem;
+    transform:translate(0,0);
   }
   .module-card p{
+    position:absolute;
+    left:.9rem;
+    right:.9rem;
+    bottom:.85rem;
     margin:0;
-    font-size:.86rem;
-    color:var(--ink-soft);
+    font-size:.82rem;
+    line-height:1.4;
+    color:#fff;
     max-width:none;
     max-height:0;
     opacity:0;
     overflow:hidden;
-    transition:max-height .28s ease, opacity .22s ease, margin-top .28s ease;
+    transition:max-height .28s ease, opacity .2s ease .05s;
   }
   .module-card:hover p,
   .module-card:focus-within p{
     max-height:8rem;
     opacity:1;
-    margin-top:.4rem;
   }
 
   /* ---------- modules / skills ---------- */
